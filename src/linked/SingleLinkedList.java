@@ -8,6 +8,10 @@ public class SingleLinkedList<T> {
     //链表头结点
     private Node<T> head;
 
+    public Node getHead() {
+        return this.head;
+    }
+
     /**
      * 根据值查找节点
      * @param value

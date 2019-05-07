@@ -41,8 +41,8 @@ public class MyArray {
         if(index < 0 || index > this.size) return false;
 
         //移动元素
-        for(int i = this.size - 1; i > index; i--) {
-            this.data[i] = this.data[i - 1];
+        for(int i = this.size - 1; i >= index; i--) {
+            this.data[i + 1] = this.data[i];
         }
 
         this.data[index] = value;
@@ -64,6 +64,23 @@ public class MyArray {
 
         this.size --;
         return true;
+    }
+
+    /**
+     * 在数组头部添加数据
+     * @param value
+     * @return
+     */
+    public boolean addFirst(int value) {
+        return this.insert(0, value);
+    }
+
+    /**
+     * 返回数组大小
+     * @return
+     */
+    public int getSize() {
+        return this.size;
     }
 
     @Override
