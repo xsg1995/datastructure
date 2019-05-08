@@ -13,5 +13,6 @@
 - PalindromeBaseLinked 基于链表实现回文串的判断
 
 **栈练习**
-- MyStack 用数组实现栈的出栈入栈操作
+- MyStack 基于数组实现栈的出栈入栈操作
 - CalExpress 使用栈求简单表达式的值
+- MyStackByLinked 基于链表实现栈的入栈出栈操作
