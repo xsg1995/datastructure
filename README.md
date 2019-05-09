@@ -16,3 +16,10 @@
 - MyStack 基于数组实现栈的出栈入栈操作
 - CalExpress 使用栈求简单表达式的值
 - MyStackByLinked 基于链表实现栈的入栈出栈操作
+- Browser 实现浏览器的前进后退功能
+
+**队列练习**
+- MyArrayQueue 基于固定大小的数组实现的队列
+- MyDynamicArrayQueue 基于数组实现队列，空间不足自动搬移数据
+- MyCircularQueue 基于固定大小的数组实现的环状队列
+- MyQueueBaseLinkedList 基于链表实现的队列

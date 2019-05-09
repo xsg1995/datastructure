@@ -37,7 +37,8 @@ public class MyStack<T> {
      * 对数组扩容
      */
     private void resize() {
-        T[] tmp = (T[]) new Object[this.capacity * 2];
+        this.capacity = this.capacity * 2;
+        T[] tmp = (T[]) new Object[this.capacity];
 
         for(int i = 0; i < this.size; i++) {
             tmp[i] = this.data[i];
@@ -64,6 +65,13 @@ public class MyStack<T> {
         if(this.size < 1) return null;
 
         return this.data[this.size - 1];
+    }
+
+    /**
+     * 清空栈
+     */
+    public void empty() {
+        this.size = 0;
     }
 
     public void printAll() {
