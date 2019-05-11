@@ -31,3 +31,6 @@
 - BubbleSort 冒泡排序
 - SelectionSort 选择排序
 - InsertionSort 插入排序
+- MergeSort 归并排序
+- QuickSort 快速排序
+- KthSmallest 在数组中查找第k大的数
