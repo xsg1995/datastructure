@@ -35,3 +35,6 @@
 - QuickSort 快速排序
 - KthSmallest 在数组中查找第k大的数
 - CountingSort 计数排序
+
+**查找**
+- BinarySearch 二分法查找
