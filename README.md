@@ -34,3 +34,4 @@
 - MergeSort 归并排序
 - QuickSort 快速排序
 - KthSmallest 在数组中查找第k大的数
+- CountingSort 计数排序
