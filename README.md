@@ -38,3 +38,6 @@
 
 **查找**
 - BinarySearch 二分法查找
+
+**树**
+- BinaryTreeBaseLinked 基于链表实现的二叉树
