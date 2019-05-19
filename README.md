@@ -41,3 +41,4 @@
 
 **树**
 - BinaryTreeBaseLinked 基于链表实现的二叉树
+- BinarySearchTree 二叉查找树
