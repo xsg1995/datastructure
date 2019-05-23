@@ -44,3 +44,7 @@
 - BinarySearchTree 二叉查找树
 - Heap 大顶堆实现
 - HeapSort 堆排序
+
+**字符串查找算法**
+- BFMatch 基于BF算法查找，朴素匹配算法
+- RKMatch 基于RK算法查找，使用hash函数优化BF算法
