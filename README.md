@@ -44,6 +44,7 @@
 - BinarySearchTree 二叉查找树
 - Heap 大顶堆实现
 - HeapSort 堆排序
+- Trie trie树实现
 
 **字符串查找算法**
 - BFMatch 基于BF算法查找，朴素匹配算法
