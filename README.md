@@ -53,3 +53,9 @@
 **算法**
 - AddToBag 将一组不同重量的物品装入背包，求在满足背包最大重量限制的前提下，背包中物品总重量的最大值
 - AddToBag2 将一组不同重量、不同价值的物品装入背包，求在满足背包最大重量限制的前提下，背包中物品总价值的最大值
+
+**并发编程**
+- SafeDateFormat 使用ThreadLocal解决SimpleDateFormat在并发场景下是线程安全的
+- SafeCount 使用AtomicReference保证不可变对象的引用原子性
+- ForkJoinFibonacci 使用Fork/Join计数斐波那也数
+- ForkJoinWordCount 使用Fork/Join实现单词计数
