@@ -59,3 +59,4 @@
 - SafeCount 使用AtomicReference保证不可变对象的引用原子性
 - ForkJoinFibonacci 使用Fork/Join计数斐波那也数
 - ForkJoinWordCount 使用Fork/Join实现单词计数
+- CompletionServiceTest CompletionService批量执行异步任务
