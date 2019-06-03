@@ -60,3 +60,4 @@
 - ForkJoinFibonacci 使用Fork/Join计数斐波那也数
 - ForkJoinWordCount 使用Fork/Join实现单词计数
 - CompletionServiceTest CompletionService批量执行异步任务
+- FutureTaskTest 使用FutureTask实现烧水泡茶的例子
