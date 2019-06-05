@@ -61,3 +61,5 @@
 - ForkJoinWordCount 使用Fork/Join实现单词计数
 - CompletionServiceTest CompletionService批量执行异步任务
 - FutureTaskTest 使用FutureTask实现烧水泡茶的例子
+- CountDownLatchTest CountDownLatch 练习
+- CyclicBarrierTest CyclicBarrier练习
