@@ -53,6 +53,7 @@
 **算法**
 - AddToBag 将一组不同重量的物品装入背包，求在满足背包最大重量限制的前提下，背包中物品总重量的最大值
 - AddToBag2 将一组不同重量、不同价值的物品装入背包，求在满足背包最大重量限制的前提下，背包中物品总价值的最大值
+- EightQueens 求解八皇后问题
 
 **并发编程**
 - SafeDateFormat 使用ThreadLocal解决SimpleDateFormat在并发场景下是线程安全的
