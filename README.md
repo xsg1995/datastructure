@@ -11,6 +11,7 @@
 - SingleLinkedList 实现单链表的增、删、改、查操作
 - LRUBaseLinkedList 基于单链表实现LRU算法
 - PalindromeBaseLinked 基于链表实现回文串的判断
+- LinkedOperation 链表的几个操作
 
 **栈练习**
 - MyStack 基于数组实现栈的出栈入栈操作
@@ -64,3 +65,7 @@
 - FutureTaskTest 使用FutureTask实现烧水泡茶的例子
 - CountDownLatchTest CountDownLatch 练习
 - CyclicBarrierTest CyclicBarrier练习
+
+**设计模式**
+- designpatterns包下
+

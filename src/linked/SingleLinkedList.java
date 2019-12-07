@@ -12,6 +12,10 @@ public class SingleLinkedList<T> {
         return this.head;
     }
 
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
     /**
      * 根据值查找节点
      * @param value
@@ -231,6 +235,8 @@ public class SingleLinkedList<T> {
         public void setNext(Node next) {
             this.next = next;
         }
+
+
     }
 
     public static void main(String[] args) {
