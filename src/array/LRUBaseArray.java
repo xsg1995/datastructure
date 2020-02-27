@@ -46,6 +46,25 @@ public class LRUBaseArray<T> {
     }
 
     /**
+     * 访问元素
+     * @param e
+     * @return
+     */
+    public T get(T e) {
+        int index = this.findIndex(e);
+
+        if(index == -1) return null;
+
+        T result = this.data[index];
+        for(int i = index - 1; i >= 0; i--) {
+            this.data[i + 1] = this.data[i];
+        }
+        this.data[0] = result;
+
+        return result;
+    }
+
+    /**
      * 在指定下标添加元素
      * @param index
      * @param e
