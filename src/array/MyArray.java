@@ -38,7 +38,7 @@ public class MyArray {
     public boolean insert(int index, int value) {
         if(this.size == this.capacity) return false;
 
-        if(index < 0 || index > this.size) return false;
+        if(index < 0 || index >= this.capacity) return false;
 
         //移动元素
         for(int i = this.size - 1; i >= index; i--) {

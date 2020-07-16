@@ -46,6 +46,25 @@ public class LRUBaseLinkedList<T> {
     }
 
     /**
+     * 访问数据
+     * @param e
+     * @return
+     */
+    public T get(T e) {
+        Node preNode = findPreNode(e);
+
+        if(preNode != null) {
+            //节点在链表中
+            removeNextNode(preNode);
+            insertNodeBegin(e);
+            return e;
+        } else {
+            //节点不在链表中
+            return null;
+        }
+    }
+
+    /**
      * 删除最后一个节点
      */
     private void removeLastNode() {
@@ -59,9 +78,7 @@ public class LRUBaseLinkedList<T> {
         while (node.next.next != null) {
             node = node.next;
         }
-        Node tmpNode = node.next;
         node.next = null;
-        tmpNode = null;
         this.size --;
     }
 
