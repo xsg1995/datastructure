@@ -1,6 +1,7 @@
 package leetcode;
 
-/**移动零(https://leetcode-cn.com/problems/move-zeroes/)
+/**
+ * 移动零(https://leetcode-cn.com/problems/move-zeroes/)
  * Created by xsg on 2020/7/16.
  */
 public class Solution283 {
