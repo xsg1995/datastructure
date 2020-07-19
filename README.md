@@ -72,4 +72,6 @@
 **leetcode**
 - 移动零: Solution283
 - 盛最多水的容器: Solution11
-- 爬楼梯:Solution70
+- 爬楼梯: Solution70
+- 两数之和: Solution1
+- 三数之和: Solution15
