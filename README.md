@@ -75,3 +75,5 @@
 - 爬楼梯: Solution70
 - 两数之和: Solution1
 - 三数之和: Solution15
+- 反转链表: Solution206
+- 两两交换链表中的节点: Solution24
