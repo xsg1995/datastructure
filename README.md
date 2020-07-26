@@ -79,3 +79,6 @@
 - 两两交换链表中的节点: Solution24
 - 环形链表: Solution141
 - 环形链表 II: Solution142
+- K 个一组翻转链表: Solution25
+- 有效的括号: Solution20
+- 最小栈: MinStack
