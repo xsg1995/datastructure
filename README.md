@@ -77,3 +77,5 @@
 - 三数之和: Solution15
 - 反转链表: Solution206
 - 两两交换链表中的节点: Solution24
+- 环形链表: Solution141
+- 环形链表 II: Solution142
