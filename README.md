@@ -83,3 +83,6 @@
 - 有效的括号: Solution20
 - 最小栈: MinStack
 - 柱状图中最大的矩形: Solution84
+- 滑动窗口最大值: Solution239
+- 设计循环双端队列: MyCircularDeque
+- 接雨水: Solution42
