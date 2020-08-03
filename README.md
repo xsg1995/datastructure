@@ -86,3 +86,6 @@
 - 滑动窗口最大值: Solution239
 - 设计循环双端队列: MyCircularDeque
 - 接雨水: Solution42
+- 删除排序数组中的重复项: Solution26
+- 旋转数组: Solution189
+- 合并两个有序链表: Solution21
