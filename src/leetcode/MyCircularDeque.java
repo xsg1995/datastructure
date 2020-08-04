@@ -1,6 +1,7 @@
 package leetcode;
 
 /**
+ * 设计循环双端队列
  * Created by xsg on 2020/8/1.
  */
 public class MyCircularDeque {

@@ -89,3 +89,5 @@
 - 删除排序数组中的重复项: Solution26
 - 旋转数组: Solution189
 - 合并两个有序链表: Solution21
+- 合并两个有序数组: Solution88
+- 加一: Solution66
