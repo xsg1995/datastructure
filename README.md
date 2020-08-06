@@ -89,6 +89,8 @@
 - 删除排序数组中的重复项: Solution26
 - 旋转数组: Solution189
 - 合并两个有序链表: Solution21
+- 合并两个有序数组: Solution88
+- 加一: Solution66
 - 有效的字母异位词: Solution242
 - 字母异位词分组: Solution49
 - 二叉树的中序遍历: Solution94
