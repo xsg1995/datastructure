@@ -94,3 +94,7 @@
 - 有效的字母异位词: Solution242
 - 字母异位词分组: Solution49
 - 二叉树的中序遍历: Solution94
+- 二叉树的前序遍历: Solution144
+- N叉树的后序遍历: Solution590
+- N叉树的前序遍历: Solution589
+- N叉树的层序遍历: Solution429
