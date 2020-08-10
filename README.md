@@ -98,3 +98,6 @@
 - N叉树的后序遍历: Solution590
 - N叉树的前序遍历: Solution589
 - N叉树的层序遍历: Solution429
+- 最小的k个数: Solution40
+- 丑数: SolutionOffer49
+- 前 K 个高频元素: Solution347
