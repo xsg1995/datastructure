@@ -101,3 +101,5 @@
 - 最小的k个数: Solution40
 - 丑数: SolutionOffer49
 - 前 K 个高频元素: Solution347
+- 岛屿数量: Solution200
+- 括号生成: Solution22
