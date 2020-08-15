@@ -103,3 +103,5 @@
 - 前 K 个高频元素: Solution347
 - 岛屿数量: Solution200
 - 括号生成: Solution22
+- 翻转二叉树: Solution226
+- 验证二叉搜索树: Solution98
