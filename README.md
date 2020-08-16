@@ -105,3 +105,8 @@
 - 括号生成: Solution22
 - 翻转二叉树: Solution226
 - 验证二叉搜索树: Solution98
+- 二叉树的最大深度: Solution104
+- 二叉树的最小深度： Solution111
+- 二叉树的序列化与反序列化: Solution297
+- 二叉树的最近公共祖先: Solution236
+- 从前序与中序遍历序列构造二叉树: Solution105
