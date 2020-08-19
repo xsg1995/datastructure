@@ -111,3 +111,5 @@
 - 二叉树的最近公共祖先: Solution236
 - 从前序与中序遍历序列构造二叉树: Solution105
 - 组合: Solution77
+- 全排列: Solution46
+- 全排列 II: Solution47
