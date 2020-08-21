@@ -113,3 +113,5 @@
 - 组合: Solution77
 - 全排列: Solution46
 - 全排列 II: Solution47
+- Pow(x, n): Solution50
+- 子集: Solution78
