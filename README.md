@@ -115,3 +115,6 @@
 - 全排列 II: Solution47
 - Pow(x, n): Solution50
 - 子集: Solution78
+- 多数元素: Solution169
+- 电话号码的字母组合: Solution17
+- N皇后: Solution51
