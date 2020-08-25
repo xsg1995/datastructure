@@ -118,3 +118,6 @@
 - 多数元素: Solution169
 - 电话号码的字母组合: Solution17
 - N皇后: Solution51
+- 二叉树的层序遍历: Solution102
+- 最小基因变化: Solution433
+- 在每个树行中找最大值: Solution515
