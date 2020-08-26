@@ -121,3 +121,6 @@
 - 二叉树的层序遍历: Solution102
 - 最小基因变化: Solution433
 - 在每个树行中找最大值: Solution515
+- 单词接龙: Solution127
+- 柠檬水找零: Solution860
+- 买卖股票的最佳时机 II: Solution122
