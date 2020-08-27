@@ -124,3 +124,6 @@
 - 单词接龙: Solution127
 - 柠檬水找零: Solution860
 - 买卖股票的最佳时机 II: Solution122
+- 分发饼干: Solution455
+- 跳跃游戏: Solution55
+- 跳跃游戏 II: Solution45 
