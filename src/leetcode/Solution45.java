@@ -5,7 +5,7 @@ package leetcode;
  * Created by xsg on 2020/8/27.
  */
 public class Solution45 {
-    
+
     public int jump(int[] nums) {
         int maxJump = 0;
         int step = 0;
