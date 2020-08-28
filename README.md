@@ -126,4 +126,8 @@
 - 买卖股票的最佳时机 II: Solution122
 - 分发饼干: Solution455
 - 跳跃游戏: Solution55
-- 跳跃游戏 II: Solution45 
+- 跳跃游戏 II: Solution45
+- x 的平方根: Solution69
+- 有效的完全平方数: Solution367
+- 搜索旋转排序数组: Solution33
+- 使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方: ChangeSolution33
