@@ -131,3 +131,5 @@
 - 有效的完全平方数: Solution367
 - 搜索旋转排序数组: Solution33
 - 使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方: ChangeSolution33
+- 不同路径: Solution62
+- 不同路径 II: Solution63
