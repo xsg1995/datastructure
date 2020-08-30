@@ -6,6 +6,13 @@ package leetcode;
  */
 public class Solution21 {
 
+    /**
+     * 使用递归实现
+     * 如果 l1 == null ，则返回有序链表 l2
+     * 如果 l2 == null ，则返回有序链表 l1
+     * 如果 l1.val < l2.val，则 l1 当前节点较小，则取 l1.next 与 l2 的较小者为下一个值，返回l1
+     * 如果 l1.val >= l2.val，则 l2.val 当前节点较小，则取 l1 与 l2.next 的较小者为下一个值，返回 l2
+     */
     public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
@@ -20,6 +27,11 @@ public class Solution21 {
         }
     }
 
+    /**
+     * 创建一个哨兵节点 head
+     * 遍历 l1 与 l2，取 l1 与 l2 中的较小节点，拼接到 head 的后面
+     * 最后返回 head.next
+     */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(-1);
         ListNode cur = head;

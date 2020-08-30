@@ -6,6 +6,11 @@ package leetcode;
  */
 public class Solution84 {
 
+    /**
+     * 暴力遍历
+     * 每次从遍历的柱子中寻找高度最小的一根
+     * 计算面积
+     */
     public int largestRectangleArea1(int[] heights) {
         int area = 0;
         for (int i = 0; i < heights.length; i++) {
@@ -20,6 +25,12 @@ public class Solution84 {
         return area;
     }
 
+    /**
+     * 双指针法
+     * 从当前柱子开始，向左右两边扩散指针
+     * 从两边找到第一根小于当前柱子高度的柱子
+     * 求解面积
+     */
     public int largestRectangleArea2(int[] heights) {
         if (heights == null || heights.length == 0) return 0;
 

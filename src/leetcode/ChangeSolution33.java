@@ -16,7 +16,7 @@ public class ChangeSolution33 {
         int right = nums.length - 1;
         while (left < right) {
             int mid = left + (right - left) / 2;
-            if (nums[mid] > nums[right]) {
+            if (nums[mid] >= nums[right]) {
                 left = mid + 1;
             } else {
                 right = mid;
@@ -25,3 +25,9 @@ public class ChangeSolution33 {
         return left;
     }
 }
+
+//二分法取中间的值(a)与最后一个值(b)进行比较
+//a >= b 则无序的部分在 a 后面，因此left = mid + 1
+//a < b 则 a 处于无序部分，因此 right = mid
+//当 left == right ，则 left = right = 无序的索引
+//注意：left < right，left <= right 会有死循环

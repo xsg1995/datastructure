@@ -5,6 +5,16 @@ package leetcode;
  * Created by xsg on 2020/7/22.
  */
 public class Solution24 {
+    /**
+     * dummp 为哨兵节点，dummp.next = head
+     * first = dummp.next
+     * second = dummp.next.next
+     * if first != null && second != null
+     * first.next = second.next
+     * second.next = first
+     * current.next = second
+     * current = first
+     */
     public ListNode swapPairs(ListNode head) {
         ListNode dummp = new ListNode(0);
         dummp.next = head;
@@ -21,7 +31,7 @@ public class Solution24 {
     }
 
 
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
 

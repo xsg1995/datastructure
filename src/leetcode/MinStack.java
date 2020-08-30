@@ -42,3 +42,8 @@ public class MinStack {
         return res;
     }
 }
+
+//用两个栈实现，stack  minStack
+//stack存放正常入栈出栈的数据
+//minStack存放每次入栈后，stack中的最小值
+//因为minStack栈顶元素已经是上次入栈的最小值，所以入栈时仅需要比较minStack栈顶的值与新入栈的值的大小，即可获取当次入栈时，stack的最小值

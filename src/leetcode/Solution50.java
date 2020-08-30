@@ -12,12 +12,16 @@ public class Solution50 {
     Map<Integer, Double> map = new HashMap<>();
 
     public double myPow(double x, int n) {
-        if (n == 0) return 1;
-        if (x == 0) return 0;
-
         return n < 0 ? 1 / helper(x, -n) : helper(x, n);
     }
 
+    /**
+     * n % 2 == 0
+     * res = x ^ n/2 * x ^ n/2
+     *
+     * n % 2 != 0
+     * res = x ^ n/2 * x ^ n/2 * x
+     */
     private double helper(double x, int n) {
         if (n == 0) return 1;
         if (n == 1) return x;

@@ -17,6 +17,12 @@ public class Solution22 {
         return res;
     }
 
+    /**
+     * left 放入的左括号的数量 right 放入的右括号的数量
+     * left == right == n 则放入的左、右括号都已达到上限
+     * left < n 则左括号未放满，可以继续放入左括号
+     * right < left，则可以继续放入右括号
+     */
     private void helper2(int left, int right, int n, String str, List<String> list) {
         if (left == n && right == n) {
             list.add(str);
@@ -39,6 +45,12 @@ public class Solution22 {
         return res;
     }
 
+    /**
+     * 左右括号共有 2n 个位置
+     * 每个位置都可以放入左、右括号
+     * 放入每个括号后，使用 dfs 继续放入下一个位置的括号
+     * 最后当 2n 个位置都填满后，验证生成的括号是否有效
+     */
     private void helper(int index, int n, String curStr, List<String> list) {
         if (index == n) {
             boolean valid = validate(curStr);

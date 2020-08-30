@@ -27,6 +27,9 @@ public class Solution77 {
         return res;
     }
 
+    /**
+     * dfs 实现
+     */
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> output = new ArrayList<>();
         if (k == 0) return output;

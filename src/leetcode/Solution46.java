@@ -1,7 +1,6 @@
 package leetcode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,6 +22,12 @@ public class Solution46 {
         return res;
     }
 
+    /**
+     * nums 为当前层可以加入的数据列表
+     * nums 中的元素加入到当前层后，需把加入的元素删除，然后 dfs 下探到下一层
+     * 当 nums.isEmpty 时，表示所有元素都已经加入到 currList 中
+     * 需要恢复当前层的状态 currList.remove(n)
+     */
     private void permute(List<Integer> nums, List<Integer> currList, List<List<Integer>> res) {
         if (nums.isEmpty()) {
             res.add(new ArrayList<>(currList));

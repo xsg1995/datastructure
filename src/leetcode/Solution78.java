@@ -10,6 +10,9 @@ import java.util.List;
  */
 public class Solution78 {
 
+    /**
+     * 循环实现
+     */
     public List<List<Integer>> subsets2(int[] nums) {
         List<List<Integer>> output = new ArrayList<>();
         output.add(new ArrayList<>());
@@ -20,14 +23,15 @@ public class Solution78 {
                 cur.add(n);
                 subList.add(cur);
             }
-            for (List<Integer> list : subList) {
-                output.add(list);
-            }
+            output.addAll(subList);
         }
 
         return output;
     }
 
+    /**
+     * dfs 实现，放入 0 ~ n 个数
+     */
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> output = new ArrayList<>();
         for (int i = 0; i < nums.length + 1; i++) {

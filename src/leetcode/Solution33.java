@@ -5,6 +5,19 @@ package leetcode;
  * Created by xsg on 2020/8/29.
  */
 public class Solution33 {
+
+    /**
+     * 二分法获取 nums[mid]
+     * 如果 nums[0] <= nums[mid]
+     * 则nums[0] ~ nums[mid] 是有序的
+     * if target < nums[mid] && target >= nums[0]
+     * 则在 nums[0] ~ nums[mid] 间查询数据
+     *
+     * 如果 nums[0] > nums[mid]
+     * 则 nums[mid] ~ nums[nums.length - 1] 是有序的
+     * if target > nums[mid] && target >= nums[nums.length - 1]
+     * 则在 nums[mid] ~ nums[nums.length - 1] 查询数据
+     */
     public int search(int[] nums, int target) {
         int low = 0;
         int hight = nums.length - 1;

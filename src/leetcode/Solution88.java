@@ -8,6 +8,11 @@ import java.util.Arrays;
  */
 public class Solution88 {
 
+    /**
+     * 申请一个新数组
+     * 遍历两个有序数组，将值添加到新数组中
+     * 将新数组中的值拷贝会旧数组
+     */
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int[] newNums = new int[m + n];
 
@@ -42,6 +47,9 @@ public class Solution88 {
         Arrays.sort(nums1);
     }
 
+    /**
+     * 将两个数组的数据从尾部取最大值插入到数组中
+     */
     public void merge3(int[] nums1, int m, int[] nums2, int n) {
         int p1 = m - 1;
         int p2 = n - 1;
