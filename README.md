@@ -133,3 +133,6 @@
 - 使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方: ChangeSolution33
 - 不同路径: Solution62
 - 不同路径 II: Solution63
+- 最长公共子序列: Solution1143
+- 三角形最小路径和: Solution120
+- 最大子序和: Solution53
