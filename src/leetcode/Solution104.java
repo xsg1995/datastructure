@@ -11,6 +11,10 @@ import java.util.Deque;
  */
 public class Solution104 {
 
+    /**
+     * 广度优先遍历，记录下每个节点的深度
+     * 遍历过程中取最大值
+     */
     public int maxDepth2(TreeNode root) {
         if (root == null) return 0;
 
@@ -28,6 +32,10 @@ public class Solution104 {
         return maxDepth;
     }
 
+    /**
+     * 递归实现
+     * 当前节点的最大深度为左、右节点深度的最大值
+     */
     public int maxDepth(TreeNode root) {
         if (root == null) return 0;
 

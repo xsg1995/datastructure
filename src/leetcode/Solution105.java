@@ -6,6 +6,13 @@ package leetcode;
  */
 public class Solution105 {
 
+    /**
+     * 前序遍历：中左右
+     * 中序遍历：左中右
+     * 前序遍历的第一个值为根节点
+     * 在中序遍历序列中，查找根节点，根节点左边的节点数量，为根节点左子树的节点
+     * 在中序遍历序列中，查找根节点，根节点右边的节点数量，为根节点右子树的节点
+     */
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         return buildTree(preorder, 0, preorder.length, inorder, 0, inorder.length);
     }

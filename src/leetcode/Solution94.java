@@ -11,6 +11,10 @@ import java.util.List;
  */
 public class Solution94 {
 
+    /**
+     * 使用 deque 实现
+     * dfs 深度优先遍历
+     */
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> output = new ArrayList<>();
 
@@ -28,6 +32,9 @@ public class Solution94 {
         return output;
     }
 
+    /**
+     * 递归实现，左中右
+     */
     public List<Integer> inorderTraversal2(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         helper(root, res);

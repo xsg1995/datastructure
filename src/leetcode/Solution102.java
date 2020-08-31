@@ -10,6 +10,10 @@ import java.util.List;
  * Created by xsg on 2020/8/25.
  */
 public class Solution102 {
+
+    /**
+     * 使用广度优先遍历实现
+     */
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) return res;
