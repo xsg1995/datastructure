@@ -8,6 +8,11 @@ import java.util.List;
  */
 public class Solution120 {
 
+    /**
+     * 当前节点的路径和 = Math.min((row + 1, col), (row + 1, col + 1)) + (row, col)
+     * 最后一层节点由于没有下层节点，因此最后一层节点的路径和 = 0 + (row, col)
+     * 递归从下层节点返推算出上层节点的路径和
+     */
     public int minimumTotal(List<List<Integer>> triangle) {
         int row = triangle.size();
         int col = triangle.get(row - 1).size();

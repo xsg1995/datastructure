@@ -11,12 +11,18 @@ import java.util.Deque;
  */
 public class Solution111 {
 
+    /**
+     * 当前节点的最小深度等于左子树的深度与右子树的深度的较小值
+     * 如果当前节点无左子树，则需计算右子树的深度
+     * 如果当前节点无右子树，则需计算左子树的深度
+     * 如果当前节点无左、右子树，则当前节点的深度为1
+     */
     public int minDepth3(TreeNode root) {
         if (root == null) return 0;
-        if (root.left == null) return minDepth(root.right) + 1;
-        if (root.right == null) return minDepth(root.left) + 1;
+        if (root.left == null) return minDepth3(root.right) + 1;
+        if (root.right == null) return minDepth3(root.left) + 1;
 
-        return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
+        return Math.min(minDepth3(root.left), minDepth3(root.right)) + 1;
     }
 
     public int minDepth2(TreeNode root) {
@@ -24,8 +30,8 @@ public class Solution111 {
         if (root.left == null && root.right == null) return 1;
 
         int minDepth = Integer.MAX_VALUE;
-        if (root.left != null) minDepth = Math.min(minDepth, minDepth(root.left));
-        if (root.right != null) minDepth = Math.min(minDepth, minDepth(root.right));
+        if (root.left != null) minDepth = Math.min(minDepth, minDepth2(root.left));
+        if (root.right != null) minDepth = Math.min(minDepth, minDepth2(root.right));
 
         return minDepth + 1;
     }

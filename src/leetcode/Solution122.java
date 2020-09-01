@@ -6,6 +6,10 @@ package leetcode;
  */
 public class Solution122 {
 
+    /**
+     * 如果第二天的价格比前一天的高，则买入就有赚
+     * 遍历数组，累加差值
+     */
     public int maxProfit2(int[] prices) {
         int maxProfit = 0;
         for (int i = 1; i < prices.length; i++) {
@@ -16,7 +20,11 @@ public class Solution122 {
         return maxProfit;
     }
 
-
+    /**
+     * 遍历数组，找到最低点与最高点，求者的差值
+     * 最低点：prices[i + 1] > prices[i]，则 i 是最低点
+     * 最高点：prices[i - 1] < prices[i]，则 i 是最高点
+     */
     public int maxProfit(int[] prices) {
         int maxProfit = 0;
         int height = 0;
