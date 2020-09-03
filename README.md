@@ -136,3 +136,5 @@
 - 最长公共子序列: Solution1143
 - 三角形最小路径和: Solution120
 - 最大子序和: Solution53
+- 乘积最大子数组: Solution152
+- 零钱兑换: Solution322
