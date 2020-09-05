@@ -138,3 +138,6 @@
 - 最大子序和: Solution53
 - 乘积最大子数组: Solution152
 - 零钱兑换: Solution322
+- 打家劫舍: Solution198
+- 打家劫舍 II: Solution213
+- 实现 Trie (前缀树): Trie
