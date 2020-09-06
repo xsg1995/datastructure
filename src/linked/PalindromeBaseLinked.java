@@ -1,80 +1,75 @@
 package linked;
 
 /**
+ * 基于链表判断回文字符串
  * Created by xsg on 2019/5/7.
  */
 public class PalindromeBaseLinked {
 
-    public static boolean isPalindrome(SingleLinkedList singleLinkedList) {
-        SingleLinkedList.Node head = singleLinkedList.getHead();
+    public static boolean isPalindrome(Node head) {
         if(head == null) {
             return false;
         }
-        if(head.getNext() == null) {
+        //一个节点
+        if(head.next == null) {
             return true;
         }
 
-        SingleLinkedList.Node backNode = head;
-        SingleLinkedList.Node midNode = head;
+        Node backNode = head;
+        Node midNode = head;
 
-        while (backNode.getNext() != null && backNode.getNext().getNext() != null) {
-            midNode = midNode.getNext();
-            backNode = backNode.getNext().getNext();
+        while (backNode.next != null && backNode.next.next != null) {
+            midNode = midNode.next;
+            backNode = backNode.next.next;
         }
 
-        SingleLinkedList.Node rightNode = null;
-        SingleLinkedList.Node leftNode = null;
-        if(backNode.getNext() == null) {
-            rightNode = midNode.getNext();
-            leftNode = inverseLinkList(head, midNode).getNext();
+        Node rightNode = null;
+        Node leftNode = null;
+        if(backNode.next == null) {
+            //奇数个节点
+            rightNode = midNode.next;
+            leftNode = inverseLinkList(head, midNode).next;
         } else {
-            rightNode = midNode.getNext();
+            //偶数节点
+            rightNode = midNode.next;
             leftNode = inverseLinkList(head, midNode);
         }
 
 
         while (rightNode != null && leftNode != null) {
-            if(!rightNode.getData().equals(leftNode.getData())) {
+            if(rightNode.data != leftNode.data) {
                 return false;
             }
-            rightNode = rightNode.getNext();
-            leftNode = leftNode.getNext();
+            rightNode = rightNode.next;
+            leftNode = leftNode.next;
         }
 
-        if(rightNode != null || leftNode != null) {
-            return false;
-        }
+        if(rightNode != null || leftNode != null) return false;
 
         return true;
     }
 
-    private static SingleLinkedList.Node inverseLinkList(SingleLinkedList.Node head, SingleLinkedList.Node midNode) {
+    private static Node inverseLinkList(Node head, Node midNode) {
 
-        SingleLinkedList.Node currentNode = head;
-        SingleLinkedList.Node nextNode = null;
-        SingleLinkedList.Node inverseNode = null;
+        Node currentNode = head;
+        Node nextNode = null;
+        Node inverseNode = null;
 
         while (currentNode != midNode) {
-            nextNode = currentNode.getNext();
-            currentNode.setNext(inverseNode);
+            nextNode = currentNode.next;
+            currentNode.next = inverseNode;
             inverseNode = currentNode;
             currentNode = nextNode;
         }
 
-        currentNode.setNext(inverseNode);
+        currentNode.next = inverseNode;
 
         return currentNode;
     }
 
-    public static void main(String[] args) {
-        SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
-        linkedList.insertToHead(1);
-        linkedList.insertToHead(2);
-        linkedList.insertToHead(3);
-        linkedList.insertToHead(3);
-        linkedList.insertToHead(2);
-        linkedList.insertToHead(1);
-
-        System.out.println(PalindromeBaseLinked.isPalindrome(linkedList));
+    private static class Node {
+        int data;
+        Node next;
     }
+
 }

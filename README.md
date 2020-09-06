@@ -4,7 +4,7 @@
 - MyArray 大小固定的数组实现
 - MyDynamicArray 自动扩容数组实现
 - LRUBaseArray 基于数组实现LRU算法
-- LRUBaseArrayAndMap 基于数组与Map实现LRU算法
+- LRUBaseArrayAndMap 基于LinkedHashMap实现LRU算法
 - PalindromeBaseArray 基于数组实现回文串的判断
 
 **链表练习**
@@ -55,19 +55,6 @@
 - AddToBag 将一组不同重量的物品装入背包，求在满足背包最大重量限制的前提下，背包中物品总重量的最大值
 - AddToBag2 将一组不同重量、不同价值的物品装入背包，求在满足背包最大重量限制的前提下，背包中物品总价值的最大值
 - EightQueens 求解八皇后问题
-
-**并发编程**
-- SafeDateFormat 使用ThreadLocal解决SimpleDateFormat在并发场景下是线程安全的
-- SafeCount 使用AtomicReference保证不可变对象的引用原子性
-- ForkJoinFibonacci 使用Fork/Join计数斐波那也数
-- ForkJoinWordCount 使用Fork/Join实现单词计数
-- CompletionServiceTest CompletionService批量执行异步任务
-- FutureTaskTest 使用FutureTask实现烧水泡茶的例子
-- CountDownLatchTest CountDownLatch 练习
-- CyclicBarrierTest CyclicBarrier练习
-
-**设计模式**
-- designpatterns包下
 
 **leetcode**
 - 移动零: Solution283

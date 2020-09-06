@@ -1,49 +1,42 @@
 package linked;
 
-import java.util.HashMap;
-import java.util.Map;
-
+/**
+ * 链表相关操作
+ */
 public class LinkedOperation {
 
     /**
      * 链表反转
-     * @param origLinked
-     * @return
+     * @param head 原始链表
+     * @return 反转后的链表
      */
-    public static void reverse(SingleLinkedList origLinked) {
+    public Node reverse(Node head) {
+        if (head == null) return null;
 
-        if(origLinked != null) {
-            SingleLinkedList.Node currentNode = origLinked.getHead();
-            SingleLinkedList.Node inverseNode = null;
-            SingleLinkedList.Node nextNode;
-            while (currentNode.getNext() != null) {
-                nextNode = currentNode.getNext();
-                currentNode.setNext(inverseNode);
-                inverseNode = currentNode;
-                currentNode = nextNode;
-            }
-            currentNode.setNext(inverseNode);
-            origLinked.setHead(currentNode);
+        Node cur = head;
+        Node inverseNode = null;
+        Node next;
+        while (cur != null) {
+            next = cur.next;
+            cur.next = inverseNode;
+            inverseNode = cur;
+            cur = next;
         }
+        return inverseNode;
     }
 
     /**
-     * 环检测
-     * @param origLinked
-     * @return
+     * 环形链表检测
+     * @param head head
+     * @return true or false
      */
-    public static boolean isCircle(SingleLinkedList origLinked) {
-        if(origLinked != null) {
-            Map<SingleLinkedList.Node, Boolean> nodesMap = new HashMap<>();
-            SingleLinkedList.Node currentNode = origLinked.getHead();
-            while (currentNode != null) {
-                if(nodesMap.get(currentNode) != null && nodesMap.get(currentNode)) {
-                    return true;
-                } else {
-                    nodesMap.put(currentNode, Boolean.TRUE);
-                }
-                currentNode = currentNode.getNext();
-            }
+    public boolean isCircle(Node head) {
+        Node first = head;
+        Node second = head;
+        while (second != null && second.next != null) {
+            first = first.next;
+            second = second.next.next;
+            if (first == second) return true;
         }
 
         return false;
@@ -51,109 +44,67 @@ public class LinkedOperation {
 
     /**
      * 有序链表合并
-     * @param firstLinked
-     * @param secondLinked
-     * @return
      */
-    public static SingleLinkedList<String> mergeSortLinked(SingleLinkedList<String> firstLinked, SingleLinkedList<String> secondLinked) {
-        SingleLinkedList<String> targetLinked = new SingleLinkedList();
-        if(firstLinked == null && secondLinked == null) {
-            return targetLinked;
+    public Node mergeSortLinked(Node first, Node second) {
+        if (first == null) {
+            return second;
+        } else if (second == null) {
+            return first;
+        } else if (first.val <= second.val) {
+            first.next = mergeSortLinked(first.next, second);
+            return first;
+        } else {
+            second.next = mergeSortLinked(first, second.next);
+            return second;
         }
+    }
 
-        SingleLinkedList.Node<String> firstCurrentNode = firstLinked != null ? firstLinked.getHead() : null;
-        SingleLinkedList.Node<String> secondCurrentNode = secondLinked != null ? secondLinked.getHead() : null;
-
-        while (firstCurrentNode != null && secondCurrentNode != null) {
-            if(firstCurrentNode.getData().compareTo(secondCurrentNode.getData()) <= 0) {
-                targetLinked.insertTail(firstCurrentNode.getData());
-                firstCurrentNode = firstCurrentNode.getNext();
+    /**
+     * 有序链表的合并
+     */
+    public Node mergeSortLinked2(Node first, Node second) {
+        Node head = new Node(-1);
+        Node cur = head;
+        while (first != null && second != null) {
+            if (first.val <= second.val) {
+                cur.next = first;
+                first = first.next;
             } else {
-                targetLinked.insertTail(secondCurrentNode.getData());
-                secondCurrentNode = secondCurrentNode.getNext();
+                //second.val < first.val
+                cur.next = second;
+                second = second.next;
             }
+            cur = cur.next;
         }
-
-        SingleLinkedList.Node<String> currentNode = firstCurrentNode;
-        if(secondCurrentNode != null) {
-            currentNode = secondCurrentNode;
+        if (first == null) {
+            cur.next = second;
+        } else {
+            cur.next = first;
         }
-
-        for(; currentNode != null; currentNode = currentNode.getNext()) {
-            targetLinked.insertTail(currentNode.getData());
-        }
-
-        return targetLinked;
+        return head.next;
     }
 
     /**
      * 取链表的中间节点
-     * @param singleLinkedList
-     * @return
      */
-    public static SingleLinkedList.Node middleNode(SingleLinkedList singleLinkedList) {
-        if(singleLinkedList == null) {
-            return null;
+    public Node middleNode(Node node) {
+        Node first = node;
+        Node second = node;
+        while (second != null && second.next != null) {
+            first = first.next;
+            second = second.next.next;
         }
-        SingleLinkedList.Node firstNode = singleLinkedList.getHead();
-        SingleLinkedList.Node secondNode = singleLinkedList.getHead();
-        while (firstNode != null && (secondNode != null && secondNode.getNext() != null)) {
-            firstNode = firstNode.getNext();
-            secondNode = secondNode.getNext().getNext();
-        }
-        return firstNode;
+        return first;
     }
 
-    public static void main(String[] args) {
-//        SingleLinkedList<String> origLinked = new SingleLinkedList<>();
-        //链表倒置
-//        origLinked.insertTail("a");
-//        origLinked.insertTail("b");
-//        origLinked.insertTail("c");
-//        origLinked.insertTail("d");
-//        origLinked.insertTail("e");
-//
-//        origLinked.printAll();
-//        reverse(origLinked);
-//        origLinked.printAll();
+    private static class Node {
+        int val;
+        Node next;
 
-        //环链表检测
-//        SingleLinkedList.Node<String> nodec = new SingleLinkedList.Node<>("c", null);
-//        SingleLinkedList.Node<String> nodeb = new SingleLinkedList.Node<>("b", nodec);
-//        SingleLinkedList.Node<String> nodea = new SingleLinkedList.Node<>("a", nodeb);
-//        nodec.setNext(nodea);
-//
-//        origLinked.setHead(nodea);
-//        System.out.println(isCircle(origLinked));
-
-        //有序链表合并
-//        SingleLinkedList<String> firstLinked = new SingleLinkedList<>();
-//        firstLinked.insertTail("a");
-//        firstLinked.insertTail("c");
-//        firstLinked.insertTail("e");
-//        firstLinked.insertTail("g");
-//        firstLinked.insertTail("i");
-//
-//        SingleLinkedList<String> secondLinked = new SingleLinkedList<>();
-//        secondLinked.insertTail("b");
-//        secondLinked.insertTail("d");
-//        secondLinked.insertTail("f");
-//        secondLinked.insertTail("h");
-//        secondLinked.insertTail("j");
-//
-//        SingleLinkedList<String> mergeSortLinked = mergeSortLinked(firstLinked, secondLinked);
-//        mergeSortLinked.printAll();
-
-        //取链表中间节点
-        SingleLinkedList<String> singleLinkedList = new SingleLinkedList<>();
-
-        singleLinkedList.insertTail("a");
-        singleLinkedList.insertTail("b");
-        singleLinkedList.insertTail("c");
-        singleLinkedList.insertTail("d");
-        singleLinkedList.insertTail("e");
-        singleLinkedList.insertTail("f");
-
-        System.out.println(middleNode(singleLinkedList).getData());
+        public Node() {}
+        public Node(int val) {
+            this.val = val;
+        }
     }
+
 }

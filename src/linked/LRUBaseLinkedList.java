@@ -1,8 +1,8 @@
 package linked;
 
-import java.util.Scanner;
-
 /**
+ * 链表实现LRU缓存淘汰算法
+ * 靠经头节点的是最近访问的节点
  * Created by xsg on 2019/5/5.
  */
 public class LRUBaseLinkedList<T> {
@@ -12,7 +12,7 @@ public class LRUBaseLinkedList<T> {
     //链表存放数据的大小
     private int size;
     //头结点
-    private Node head;
+    private Node<T> head;
 
     public LRUBaseLinkedList() {
         //默认容量为10
@@ -20,17 +20,17 @@ public class LRUBaseLinkedList<T> {
     }
 
     public LRUBaseLinkedList(int capacity) {
-        this.head = new Node();
+        this.head = new Node<T>();
         this.capacity = capacity;
         this.size = 0;
     }
 
     /**
      * 添加一个数据
-     * @param e
+     * @param e 添加的数据
      */
     public void add(T e) {
-        Node preNode = findPreNode(e);
+        Node<T> preNode = findPreNode(e);
 
         if(preNode != null) {
             //节点在链表中存在，删除节点，然后在头部插入节点
@@ -47,11 +47,11 @@ public class LRUBaseLinkedList<T> {
 
     /**
      * 访问数据
-     * @param e
-     * @return
+     * @param e 访问的节点
+     * @return 节点信息
      */
     public T get(T e) {
-        Node preNode = findPreNode(e);
+        Node<T> preNode = findPreNode(e);
 
         if(preNode != null) {
             //节点在链表中
@@ -68,7 +68,7 @@ public class LRUBaseLinkedList<T> {
      * 删除最后一个节点
      */
     private void removeLastNode() {
-        Node node = this.head;
+        Node<T> node = this.head;
 
         //空链表
         if(node.next == null) {
@@ -84,21 +84,19 @@ public class LRUBaseLinkedList<T> {
 
     /**
      * 在头部插入节点
-     * @param e
+     * @param e 要插入的节点
      */
     private void insertNodeBegin(T e) {
-        Node node = this.head;
-        Node nextNode = node.next;
-        Node newNode = new Node(e, nextNode);
-        node.next = newNode;
+        Node<T> nextNode = this.head.next;
+        this.head.next = new Node<T>(e, nextNode);
         this.size ++;
     }
 
     /**
      * 删除节点的下一个节点
-     * @param node
+     * @param node 要删除的节点
      */
-    private void removeNextNode(Node node) {
+    private void removeNextNode(Node<T> node) {
         if(node != null && node.next != null) {
             node.next = node.next.next;
             this.size --;
@@ -107,11 +105,11 @@ public class LRUBaseLinkedList<T> {
 
     /**
      * 找到要查找元素的前一个节点
-     * @param e
-     * @return
+     * @param e 要查找的节点
+     * @return 查找的节点的前一个节点
      */
-    private Node findPreNode(T e) {
-        Node node = this.head;
+    private Node<T> findPreNode(T e) {
+        Node<T> node = this.head;
         while (node.next != null) {
             if(node.next.data.equals(e)) {
                 return node;
@@ -125,17 +123,17 @@ public class LRUBaseLinkedList<T> {
      * 打印链表内容
      */
     private void printAll() {
-        Node node = this.head;
+        Node<T> node = this.head;
         while (node.next != null) {
             node = node.next;
-            System.out.print(node.getData() + " ");
+            System.out.print(node.data + " ");
         }
         System.out.println();
     }
 
-    class Node<T> {
+    private static class Node<T> {
         private T data;
-        private Node next;
+        private Node<T> next;
 
         public Node() {}
 
@@ -143,35 +141,9 @@ public class LRUBaseLinkedList<T> {
             this(data, null);
         }
 
-        public Node(T data, Node next) {
+        public Node(T data, Node<T> next) {
             this.data = data;
             this.next = next;
-        }
-
-        public T getData() {
-            return data;
-        }
-
-        public void setData(T data) {
-            this.data = data;
-        }
-
-        public Node getNext() {
-            return next;
-        }
-
-        public void setNext(Node next) {
-            this.next = next;
-        }
-    }
-    
-    public static void main(String[] args) {
-        LRUBaseLinkedList<Integer> lruBaseLinkedList = new LRUBaseLinkedList<>(5);
-        Scanner sc = new Scanner(System.in);
-        while (true) {
-            int input = sc.nextInt();
-            lruBaseLinkedList.add(input);
-            lruBaseLinkedList.printAll();
         }
     }
 
