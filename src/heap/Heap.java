@@ -1,6 +1,7 @@
 package heap;
 
 /**
+ * 用数组实现堆
  * Created by xsg on 2019/5/21.
  */
 public class Heap {
@@ -20,8 +21,8 @@ public class Heap {
     }
 
     /**
-     * 往堆中插入数据
-     * @param value
+     * 往堆中插入数据（自低向上）
+     * @param value 要插入的数据
      */
     public void insert(int value) {
         if(this.size == this.capacity) {
@@ -46,6 +47,7 @@ public class Heap {
     public void removeMax() {
         if(this.size == 0) return;
 
+        int top = this.data[1];
         this.data[1] = this.data[this.size];
         this.size --;
 
@@ -53,7 +55,7 @@ public class Heap {
     }
 
     /**
-     * 堆化
+     * 堆化（自顶向下）
      */
     private void heapify() {
         int index = 1;
@@ -79,15 +81,4 @@ public class Heap {
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        Heap heap = new Heap(5);
-        heap.insert(3);
-        heap.insert(1);
-        heap.insert(6);
-        heap.insert(10);
-        heap.insert(4);
-        heap.print();
-        heap.removeMax();
-        heap.print();
-    }
 }

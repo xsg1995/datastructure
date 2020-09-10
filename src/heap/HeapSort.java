@@ -1,13 +1,14 @@
 package heap;
 
 /**
+ * 堆排序
  * Created by xsg on 2019/5/21.
  */
 public class HeapSort {
 
     /**
-     * 建堆
-     * @param data
+     * 建堆，将数组原地堆化
+     * @param data 数组
      */
     public static void buildHeap(int[] data) {
         int size = data.length - 1;
@@ -16,6 +17,12 @@ public class HeapSort {
         }
     }
 
+    /**
+     * 自顶向下
+     * @param data 数组
+     * @param n 数组长度
+     * @param i 从哪个位置开始堆化
+     */
     private static void heaplify(int[] data, int n, int i) {
         while (true) {
             int maxIndex = i;
@@ -34,7 +41,7 @@ public class HeapSort {
 
     /**
      * 堆数组排序
-     * @param nums
+     * @param nums 数组
      */
     public static void sort(int[] nums) {
         buildHeap(nums);
@@ -48,18 +55,4 @@ public class HeapSort {
         }
     }
 
-    public static void main(String[] args) {
-        int[] num = new int[6];
-        num[1] = 2;
-        num[2] = 7;
-        num[3] = 3;
-        num[4] = 4;
-        num[5] = 10;
-
-        sort(num);
-
-        for(int i = 1; i < num.length; i++) {
-            System.out.print(num[i] + " ");
-        }
-    }
 }
