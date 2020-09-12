@@ -1,6 +1,7 @@
 package queue;
 
 /**
+ * 基于数组的自动搬移数据队列
  * Created by xsg on 2019/5/9.
  */
 public class MyDynamicArrayQueue<T> {
@@ -18,6 +19,7 @@ public class MyDynamicArrayQueue<T> {
         this(10);
     }
 
+    @SuppressWarnings("unchecked")
     public MyDynamicArrayQueue(int capacity) {
         this.capacity = capacity;
         this.head = 0;
@@ -27,7 +29,7 @@ public class MyDynamicArrayQueue<T> {
 
     /**
      * 入队
-     * @return
+     * @return 队列已满返回false
      */
     public boolean enqueue(T e) {
         if(this.tail == this.capacity) {
@@ -48,7 +50,7 @@ public class MyDynamicArrayQueue<T> {
 
     /**
      * 出队
-     * @return
+     * @return 队列为空返回false
      */
     public T dequeue() {
         if(this.head == this.tail) return null;
@@ -56,23 +58,4 @@ public class MyDynamicArrayQueue<T> {
         return this.data[this.head ++];
     }
 
-    public void printAll() {
-        for(int i = this.head; i < this.tail; i++) {
-            System.out.print(this.data[i] + " ");
-        }
-        System.out.println();
-    }
-
-    public static void main(String[] args) {
-        MyDynamicArrayQueue<Integer> queue = new MyDynamicArrayQueue<>(3);
-        queue.enqueue(1);
-        queue.enqueue(2);
-        queue.enqueue(3);
-        queue.enqueue(4);
-        queue.printAll();
-
-        System.out.println(queue.dequeue());
-        queue.enqueue(4);
-        queue.printAll();
-    }
 }

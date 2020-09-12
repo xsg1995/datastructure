@@ -1,15 +1,13 @@
 package sorts;
 
-import java.util.Arrays;
-
 /**
+ * 选择排序
  * Created by xsg on 2019/5/10.
  */
 public class SelectionSort {
 
     /**
      * 选择排序
-     * @param nums
      */
     public static void selectionSort(int[] nums) {
         if(nums.length <= 1) return;
@@ -29,10 +27,4 @@ public class SelectionSort {
         }
     }
 
-    public static void main(String[] args) {
-        int[] nums = {9, 10, 12, 1, 2, 3, 4, 6, 1};
-        selectionSort(nums);
-
-        System.out.println(Arrays.toString(nums));
-    }
 }

@@ -1,15 +1,13 @@
 package sorts;
 
-import java.util.Arrays;
-
 /**
+ * 快速排序
  * Created by xsg on 2019/5/11.
  */
 public class QuickSort {
 
     /**
      * 快速排序实现
-     * @param nums
      */
     public static void quickSort(int[] nums) {
         quickSort(nums, 0, nums.length - 1);
@@ -17,9 +15,6 @@ public class QuickSort {
 
     /**
      * 使用递归实现快速排序
-     * @param nums
-     * @param r
-     * @param p
      */
     private static void quickSort(int[] nums, int r, int p) {
         if(r >= p) return;
@@ -31,10 +26,6 @@ public class QuickSort {
 
     /**
      * 对函数分区
-     * @param nums
-     * @param r
-     * @param p
-     * @return
      */
     private static int partition(int[] nums, int r, int p) {
         int pivot = nums[p];
@@ -42,9 +33,11 @@ public class QuickSort {
 
         for(int j = r; j < p; j++) {
             if(nums[j] < pivot) {
-                int tmp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = tmp;
+                if (i != j) {
+                    int tmp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = tmp;
+                }
                 i++;
             }
         }
@@ -56,10 +49,4 @@ public class QuickSort {
         return i;
     }
 
-    public static void main(String[] args) {
-        int[] nums = {9, 10, 12, 1, 2, 3, 4, 6, 1};
-        quickSort(nums);
-
-        System.out.println(Arrays.toString(nums));
-    }
 }

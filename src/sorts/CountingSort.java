@@ -1,15 +1,13 @@
 package sorts;
 
-import java.util.Arrays;
-
 /**
+ * 计数排序
  * Created by xsg on 2019/5/12.
  */
 public class CountingSort {
 
     /**
      * 计数排序实现
-     * @param nums
      */
     public static void countingSort(int[] nums) {
         if(nums.length <= 1) return;
@@ -40,12 +38,5 @@ public class CountingSort {
         for(int i = 0; i < tmp.length; i++) {
             nums[i] = tmp[i];
         }
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {9, 10, 12, 1, 2, 3, 4, 6, 1};
-        countingSort(nums);
-
-        System.out.println(Arrays.toString(nums));
     }
 }

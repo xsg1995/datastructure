@@ -25,9 +25,6 @@
 - MyCircularQueue 基于固定大小的数组实现的环状队列
 - MyQueueBaseLinkedList 基于链表实现的队列
 
-**递归练习**
-- OneOrTowStep 假如有n个台阶，每次可以跨1个台阶或者2个台阶，走完这n个台阶有多少种走法？
-
 **排序练习**
 - BubbleSort 冒泡排序
 - SelectionSort 选择排序

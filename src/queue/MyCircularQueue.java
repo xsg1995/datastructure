@@ -1,6 +1,7 @@
 package queue;
 
 /**
+ * 循环队列
  * Created by xsg on 2019/5/9.
  */
 public class MyCircularQueue<T> {
@@ -17,6 +18,7 @@ public class MyCircularQueue<T> {
         this(10);
     }
 
+    @SuppressWarnings("unchecked")
     public MyCircularQueue(int capacity) {
         this.capacity = capacity;
         this.head = 0;
@@ -26,8 +28,8 @@ public class MyCircularQueue<T> {
 
     /**
      * 入队
-     * @param e
-     * @return
+     * @param e 入队元素
+     * @return 入队成功返回true
      */
     public boolean enqueue(T e) {
         if((this.tail + 1) % this.capacity == this.head) return false;
@@ -39,7 +41,7 @@ public class MyCircularQueue<T> {
 
     /**
      * 出队
-     * @return
+     * @return 队列为空返回null
      */
     public T dequeue() {
         if(this.head == this.tail) return null;
@@ -48,37 +50,4 @@ public class MyCircularQueue<T> {
         this.head = (this.head + 1) % this.capacity;
         return ret;
     }
-
-    private void printAll() {
-
-        if(this.tail > this.head) {
-            for(int i = this.head; i < this.tail; i++) {
-                System.out.print(this.data[i] + " ");
-            }
-        } else if(this.tail < this.head) {
-            for(int i = this.head; i < this.capacity; i++) {
-                System.out.print(this.data[i] + " ");
-            }
-            for(int i = 0; i < this.tail; i++) {
-                System.out.print(this.data[i] + " ");
-            }
-        }
-
-        System.out.println();
-    }
-
-    public static void main(String[] args) {
-        MyCircularQueue<Integer> queue = new MyCircularQueue<>(4);
-        queue.enqueue(1);
-        queue.enqueue(2);
-        queue.enqueue(3);
-        queue.enqueue(4);
-        queue.printAll();
-
-        System.out.println(queue.dequeue());
-        queue.enqueue(4);
-        queue.printAll();
-    }
-
-
 }

@@ -1,8 +1,7 @@
 package sorts;
 
-import java.util.Arrays;
-
 /**
+ * 插入排序
  * Created by xsg on 2019/5/10.
  */
 public class InsertionSort {
@@ -28,10 +27,4 @@ public class InsertionSort {
         }
     }
 
-    public static void main(String[] args) {
-        int[] nums = {9, 10, 12, 1, 2, 3, 4, 6, 1};
-        insertionSort(nums);
-
-        System.out.println(Arrays.toString(nums));
-    }
 }

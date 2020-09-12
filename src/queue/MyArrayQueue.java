@@ -1,6 +1,7 @@
 package queue;
 
 /**
+ * 数组实现队列
  * Created by xsg on 2019/5/9.
  */
 public class MyArrayQueue<T> {
@@ -17,6 +18,7 @@ public class MyArrayQueue<T> {
         this(10);
     }
 
+    @SuppressWarnings("unchecked")
     public MyArrayQueue(int capacity) {
         this.capacity = capacity;
         this.head = 0;
@@ -26,8 +28,8 @@ public class MyArrayQueue<T> {
 
     /**
      * 入队
-     * @param e
-     * @return
+     * @param e 要插入的数据
+     * @return 插入成功返回true
      */
     public boolean enqueue(T e) {
         //队列已满
@@ -39,31 +41,11 @@ public class MyArrayQueue<T> {
 
     /**
      * 出队
-     * @return
+     * @return 没有元素返回false
      */
     public T dequeue() {
         if(this.head == this.tail) return null;
 
         return this.data[this.head ++];
-    }
-
-    public void printAll() {
-        for(int i = this.head; i < this.tail; i++) {
-            System.out.print(this.data[i] + " ");
-        }
-        System.out.println();
-    }
-
-    public static void main(String[] args) {
-        MyArrayQueue<Integer> queue = new MyArrayQueue<>();
-        queue.enqueue(1);
-        queue.enqueue(2);
-        queue.enqueue(3);
-        queue.printAll();
-
-        System.out.println(queue.dequeue());
-        queue.printAll();
-        queue.enqueue(4);
-        queue.printAll();
     }
 }
