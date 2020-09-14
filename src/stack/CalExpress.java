@@ -2,8 +2,15 @@ package stack;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 /**
+ * 表达式求值
+ * 用两个栈实现
+ * 一个栈存储操作数
+ * 一个栈存储操作符
+ * 如果当前操作符 > 栈顶操作符，则当前操作符入栈
+ * 如果当前操作符 <= 栈顶操作符，则取出从操作数栈取出两个操作数和栈顶操作符进行运算后结果重新入栈
  * Created by xsg on 2019/5/8.
  */
 public class CalExpress {
@@ -18,10 +25,10 @@ public class CalExpress {
     }
 
     public static double cal(String express) {
-        MyStack<Double> numStack = new MyStack<>();
-        MyStack<String> expStack = new MyStack<>();
+        Stack<Double> numStack = new Stack<>();
+        Stack<String> expStack = new Stack<>();
 
-        if(express == null && express.trim().equals("")) {
+        if(express == null || express.trim().equals("")) {
             return -1;
         }
 
@@ -30,30 +37,30 @@ public class CalExpress {
             Integer curExpValue = expMap.get(s);
             if(curExpValue != null) {
                 //操作数
-                String exp = expStack.offer();
-                if(exp == null) {
+                if (expStack.isEmpty()) {
                     expStack.push(s);
-                } else {
-                    Integer pExpValue = expMap.get(exp);
-                    if(curExpValue > pExpValue) {
-                        expStack.push(s);
-                    } else {
-                        exp = expStack.pop();
-                        Double second = numStack.pop();
-                        Double first = numStack.pop();
-                        Double value = calValue(first, second, exp);
-                        numStack.push(value);
-                        expStack.push(s);
-                    }
+                    continue;
                 }
 
+                String exp = null;
+                while (!expStack.isEmpty() && (exp = expStack.peek()) !=null) {
+                    Integer pExpValue = expMap.get(exp);
 
+                    if (curExpValue > pExpValue) break;
+
+                    Double second = numStack.pop();
+                    Double first = numStack.pop();
+                    Double value = calValue(first, second, expStack.pop());
+                    numStack.push(value);
+                }
+
+                expStack.push(s);
             } else {
                 //数字
                 numStack.push(Double.parseDouble(s));
             }
         }
-        while (expStack.offer() != null) {
+        while (!expStack.isEmpty()) {
             Double second = numStack.pop();
             Double first = numStack.pop();
             Double value = calValue(first, second, expStack.pop());
@@ -83,7 +90,7 @@ public class CalExpress {
     }
 
     public static void main(String[] args) {
-        String express = "1 + 1 * 2 - 3 + 10 / 5 * 4 + 8 - 2 * 5";
+        String express = "1 + 1 * 2 - 3 + 10 / 5 * 4 + 8 - 2 * 5";  // 6
         System.out.println(cal(express));
     }
 

@@ -1,6 +1,9 @@
 package stack;
 
+import java.util.Stack;
+
 /**
+ * 实现浏览器的前进后退功能
  * Created by xsg on 2019/5/9.
  */
 public class Browser {
@@ -8,18 +11,18 @@ public class Browser {
     //当前浏览页面
     private String currentPage;
     //存储后退的页面
-    private MyStack<String> backStack;
+    private Stack<String> backStack;
     //存储前进的页面
-    private MyStack<String> forwardStack;
+    private Stack<String> forwardStack;
 
     public Browser() {
-        this.backStack = new MyStack<>();
-        this.forwardStack = new MyStack<>();
+        this.backStack = new Stack<>();
+        this.forwardStack = new Stack<>();
     }
 
     /**
      * 打开一个新页面
-     * @param page
+     * @param page 新页面
      */
     public void viewNewPage(String page) {
         if(this.currentPage == null) {
