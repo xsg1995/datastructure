@@ -1,6 +1,7 @@
 package stack;
 
 /**
+ * 数组实现栈
  * Created by xsg on 2019/5/8.
  */
 public class MyStack<T> {
@@ -15,6 +16,7 @@ public class MyStack<T> {
         this(10);
     }
 
+    @SuppressWarnings("unchecked")
     public MyStack(int capacity) {
         this.capacity = capacity;
         this.size = 0;
@@ -23,8 +25,7 @@ public class MyStack<T> {
 
     /**
      * 将e元素入栈
-     * @param e
-     * @return
+     * @param e 入栈元素
      */
     public void push(T e) {
         if(this.capacity == this.size) {
@@ -36,6 +37,7 @@ public class MyStack<T> {
     /**
      * 对数组扩容
      */
+    @SuppressWarnings("unchecked")
     private void resize() {
         this.capacity = this.capacity * 2;
         T[] tmp = (T[]) new Object[this.capacity];
@@ -49,49 +51,21 @@ public class MyStack<T> {
 
     /**
      * 出栈，并删除元素
-     * @return
+     * @return 出栈元素
      */
     public T pop() {
-        if(this.size < 1) return null;
+        if(this.size <= 0) return null;
 
         return this.data[--this.size];
     }
 
     /**
      * 出栈，不删除元素
-     * @return
+     * @return 返回栈顶元素
      */
     public T offer() {
-        if(this.size < 1) return null;
+        if(this.size <= 0) return null;
 
         return this.data[this.size - 1];
-    }
-
-    /**
-     * 清空栈
-     */
-    public void empty() {
-        this.size = 0;
-    }
-
-    public void printAll() {
-        for(int i = this.size - 1; i >= 0; i--) {
-            System.out.print(this.data[i] + " ");
-        }
-        System.out.println();
-    }
-
-    public static void main(String[] args) {
-        MyStack<Integer> stack = new MyStack(5);
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-
-        stack.printAll();
-
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        stack.printAll();
     }
 }

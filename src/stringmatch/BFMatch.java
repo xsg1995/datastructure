@@ -1,6 +1,7 @@
 package stringmatch;
 
 /**
+ * 暴力匹配字符串算发
  * Created by xsg on 2019/5/23.
  */
 public class BFMatch {
@@ -13,9 +14,9 @@ public class BFMatch {
 
     /**
      * 在主串中查找子串
-     * @param mainStr
-     * @param matchStr
-     * @return
+     * @param mainStr 主串
+     * @param matchStr 子串
+     * @return 子串在主串的位置
      */
     private static int match(String mainStr, String matchStr) {
         int n = mainStr.length();

@@ -1,6 +1,7 @@
 package tree;
 
 /**
+ * 二叉搜索树
  * Created by xsg on 2019/5/19.
  */
 public class BinarySearchTree {
@@ -9,8 +10,8 @@ public class BinarySearchTree {
 
     /**
      * 查找节点
-     * @param data
-     * @return
+     * @param data 要查找的数据
+     * @return 查找不到返回null
      */
     public Node find(int data) {
         Node p = this.tree;
@@ -28,7 +29,7 @@ public class BinarySearchTree {
 
     /**
      * 插入数据
-     * @param data
+     * @param data 要插入的数据
      */
     public void insert(int data) {
         if(this.tree == null) {
@@ -55,12 +56,13 @@ public class BinarySearchTree {
 
     /**
      * 删除数据
-     * @param data
+     * @param data 要删除的数据
      */
     public void delete(int data) {
         Node p = this.tree;
         Node pp = null;
 
+        //找到要删除的节点
         while (p != null && p.data != data) {
             pp = p;
             if(data > p.data) {
@@ -70,10 +72,12 @@ public class BinarySearchTree {
             }
         }
 
+        //p == null 无该数据
         if(p == null) {
             return;
         }
 
+        //删除的结点有两个节点，找到右子树的最小节点替换要删除的节点
         if(p.left != null && p.right != null) {
             Node minP = p.right;
             Node minPP = p;
@@ -96,6 +100,7 @@ public class BinarySearchTree {
         }
 
         if(pp == null) {
+            //pp 为 null ，删除的为更节点
             this.tree = child;
         } else if(pp.left == p) {
             pp.left = child;
@@ -128,54 +133,12 @@ public class BinarySearchTree {
     }
 
     public static class Node {
-        private int data;
-        private Node left;
-        private Node right;
+        public int data;
+        public Node left;
+        public Node right;
 
         public Node(int data) {
             this.data = data;
         }
-
-        public int getData() {
-            return data;
-        }
-
-        public void setData(int data) {
-            this.data = data;
-        }
-
-        public Node getLeft() {
-            return left;
-        }
-
-        public void setLeft(Node left) {
-            this.left = left;
-        }
-
-        public Node getRight() {
-            return right;
-        }
-
-        public void setRight(Node right) {
-            this.right = right;
-        }
-    }
-
-    public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
-        tree.insert(10);
-        tree.insert(9);
-        tree.insert(11);
-        tree.insert(8);
-        tree.insert(12);
-
-        tree.inOrder();
-
-        Node node = tree.find(11);
-        System.out.println(node.getData());
-
-        tree.delete(11);
-
-        tree.inOrder();
     }
 }

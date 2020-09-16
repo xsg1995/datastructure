@@ -1,6 +1,7 @@
 package stringmatch;
 
 /**
+ * RK算法
  * Created by xsg on 2019/5/23.
  */
 public class RKMatch {
@@ -14,9 +15,9 @@ public class RKMatch {
 
     /**
      * 在主串中查找子串
-     * @param mainStr
-     * @param matchStr
-     * @return
+     * @param mainStr 主串
+     * @param matchStr 子串
+     * @return 子串在主串的位置
      */
     private static int match(String mainStr, String matchStr) {
         int n = mainStr.length();
@@ -45,7 +46,7 @@ public class RKMatch {
         return -1;
     }
 
-    public static int hash(Object key) {
+    public static int hash(String key) {
         int h;
         return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
     }

@@ -3,6 +3,7 @@ package tree;
 import java.util.LinkedList;
 
 /**
+ * 链表实现二叉树
  * Created by xsg on 2019/5/17.
  */
 public class BinaryTreeBaseLinked<T> {
@@ -103,21 +104,4 @@ public class BinaryTreeBaseLinked<T> {
         }
     }
 
-    public static void main(String[] args) {
-        BinaryTreeBaseLinked<Integer> root = new BinaryTreeBaseLinked<>(10);
-        BinaryTreeBaseLinked leftNode = root.addToLeft(4);
-        BinaryTreeBaseLinked<Integer> rightNode = root.addToRight(5);
-        leftNode.addToLeft(12);
-        leftNode.addToRight(13);
-        rightNode.addToLeft(15);
-        rightNode.addToRight(16);
-
-        preOrder(root);
-        System.out.println();
-        inOrder(root);
-        System.out.println();
-        postOrder(root);
-        System.out.println();
-        levelOrder(root);
-    }
 }
