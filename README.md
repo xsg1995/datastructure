@@ -107,7 +107,6 @@
 - 在每个树行中找最大值: Solution515
 - 单词接龙: Solution127
 - 柠檬水找零: Solution860
-- 买卖股票的最佳时机 II: Solution122
 - 分发饼干: Solution455
 - 跳跃游戏: Solution55
 - 跳跃游戏 II: Solution45
@@ -126,3 +125,5 @@
 - 打家劫舍 II: Solution213
 - 实现 Trie (前缀树): Trie
 - 买卖股票的最佳时机: Solution121
+- 买卖股票的最佳时机 II: Solution122
+- 买卖股票的最佳时机 III: Solution123
