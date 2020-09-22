@@ -127,3 +127,6 @@
 - 买卖股票的最佳时机: Solution121
 - 买卖股票的最佳时机 II: Solution122
 - 买卖股票的最佳时机 III: Solution123
+- 转换成小写字母: Solution709
+- 最后一个单词的长度: Solution58
+- 宝石与石头: Solution771
