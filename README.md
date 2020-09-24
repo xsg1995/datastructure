@@ -130,3 +130,5 @@
 - 转换成小写字母: Solution709
 - 最后一个单词的长度: Solution58
 - 宝石与石头: Solution771
+- 字符串中的第一个唯一字符：Solution387
+- 字符串转换整数 (atoi): Solution8
