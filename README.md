@@ -132,3 +132,4 @@
 - 宝石与石头: Solution771
 - 字符串中的第一个唯一字符：Solution387
 - 字符串转换整数 (atoi): Solution8
+- 最长公共前缀： Solution14

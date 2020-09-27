@@ -45,5 +45,5 @@ public class Solution8 {
             return Integer.MAX_VALUE;
         }
     }
-    
+
 }
